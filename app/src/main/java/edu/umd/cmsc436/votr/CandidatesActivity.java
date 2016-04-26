@@ -10,6 +10,8 @@ public class CandidatesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_candidates);
         //y
+        //dsfasdfasdf
+        
         //API code here?
         //populate lists and inflate items using candidateslistadapter
     }
