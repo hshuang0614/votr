@@ -9,6 +9,7 @@ public class CandidatesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_candidates);
+        //y
         //API code here?
         //populate lists and inflate items using candidateslistadapter
     }

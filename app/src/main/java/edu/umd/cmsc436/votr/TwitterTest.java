@@ -26,7 +26,7 @@ public class TwitterTest extends AsyncTask<String, Void, String> {
                     "3711878716-0NSO7UxyiXkLfFPdexICDSBQRVWTSsSj1RYg6vA",
                     "x88A8QvV4jXXvatUmnWIYqa6h75pfr1wobVxcPewxSFh4"));
 
-            Queryit query = new Query(tags[0]);
+            Query query = new Query(tags[0]);
             QueryResult result = twitter.search(query);
 
             for (twitter4j.Status status : result.getTweets()) {
