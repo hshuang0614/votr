@@ -58,7 +58,4 @@ public class Candidate {
         i.putExtra(A,aa);
         i.putExtra(P,pp);
     }
-
-
-
 }

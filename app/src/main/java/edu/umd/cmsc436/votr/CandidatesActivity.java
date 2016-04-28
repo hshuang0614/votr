@@ -3,6 +3,14 @@ package edu.umd.cmsc436.votr;
 import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
+
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -14,19 +22,59 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
 
 public class CandidatesActivity extends AppCompatActivity {
 
     private ArrayList<Candidate> candidates = new ArrayList<Candidate>();
+    HashSet<String> cand = new HashSet<String>();
+    String arr[] =new String[5];
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_candidates);
         //API code here?
         //populate lists and inflate items using candidateslistadapter
+        arr[0] = "Hillary Clinton";
+        arr[1] = "Bernie Sanders";
+        arr[2] = "Donlad Trump";
+        arr[3] = "Ted Cruz";
+        arr[4] = "John Kasich";
+
         candidateDataFromXml();
         CandidatesListAdapter adapter = new CandidatesListAdapter(this, candidates);
+        ListView list= (ListView)findViewById(R.id.listView);
+        list.setAdapter(adapter);
+
+        ListView lv = (ListView) findViewById(R.id.listView);
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView <? > arg0, View view, int position, long id) {
+                setContentView(R.layout.activity_candidates);
+                try {
+                    String[] res = new TwitterAsync().execute(arr[position]).get();
+
+                    ArrayList<String> n = new ArrayList<String>();
+                    for (int i = 0; i < res.length; ++i) {
+                        n.add(res[i]);
+                    }
+
+                    TweetAdapter adap = new TweetAdapter(CandidatesActivity.this, n);
+
+                    ((ListView) findViewById(R.id.listView)).setAdapter(adap);
+
+                } catch (Exception e) {
+                   e.printStackTrace();
+                }
+            }
+        });
     }
+
 
     private void candidateDataFromXml() {
         DocumentBuilder builder;
@@ -65,8 +113,12 @@ public class CandidatesActivity extends AppCompatActivity {
                     }
                 }
                 //add candidate to list
-                Candidate can = new Candidate(name,party,Integer.parseInt(age),pic);
-                candidates.add(can);
+
+                if (age.length() != 0 && !cand.contains(name)) {
+                    cand.add(name);
+                    Candidate can = new Candidate(name, party, Integer.parseInt(age), pic);
+                    candidates.add(can);
+                }
             }
 
         } catch (DOMException e) {
@@ -78,7 +130,6 @@ public class CandidatesActivity extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
 
