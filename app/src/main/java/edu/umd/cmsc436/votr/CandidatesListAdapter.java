@@ -23,9 +23,10 @@ public class CandidatesListAdapter extends BaseAdapter {
     private static LayoutInflater inflater = null;
     private Context mContext;
 
-    public CandidatesListAdapter(Context c){
+    public CandidatesListAdapter(Context c, ArrayList<Candidate> candidates){
         mContext = c;
         inflater = LayoutInflater.from(mContext);
+        list = candidates;
     }
     @Override
     public int getCount() {
@@ -55,6 +56,7 @@ public class CandidatesListAdapter extends BaseAdapter {
 
         final ImageView picture = (ImageView) candidateLayout.findViewById(R.id.picture);
         //set picture to bitmap
+        picture.setImageDrawable(candidate.getImage());
 
 
         return candidateLayout;
