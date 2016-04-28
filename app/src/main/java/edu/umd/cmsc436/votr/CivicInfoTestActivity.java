@@ -16,15 +16,19 @@ public class CivicInfoTestActivity extends AppCompatActivity implements GetPolli
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_civic_info_test);
 
         try {
+            // Ex: Using full address string
             GetPollingLocationsQuery query = new GetPollingLocationsQuery("301 Largo Rd, Largo, MD");
+
+            // Ex: Using lat lon values.
+            // GetPollingLocationsQuery query2 = new GetPollingLocationsQuery(this, -70.0f, 70.0f);
+
             GetPollingLocationsTask task = new GetPollingLocationsTask(this);
 
             task.execute(query);
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.w(TAG, "An error ocurred while trying to get polling locations");
         }
     }
 
