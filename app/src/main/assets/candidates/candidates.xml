@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<candidates>
+
+    <candidate>
+    	<name>Hillary Clinton</name>
+    	<party>Democrat</party>
+    	<age>68</age>
+		<picture_string>hillary</picture_string>
+    </candidate>
+
+    <candidate>
+    	<name>Bernie Sanders</name>
+    	<party>Democrat</party>
+    	<age>74</age>
+		<picture_string>bernie</picture_string>
+    </candidate>
+
+    <candidate>
+    	<name>Donald Trump</name>
+    	<party>Republican</party>
+    	<age>69</age>
+		<picture_string>donald</picture_string>
+    </candidate>
+
+    <candidate>
+    	<name>Ted Cruz</name>
+    	<party>Republican</party>
+    	<age>45</age>
+		<picture_string>ted</picture_string>
+    </candidate>
+
+    <candidate>
+    	<name>John Kasich</name>
+    	<party>Republican</party>
+    	<age>63</age>
+		<picture_string>john</picture_string>
+    </candidate>
+
+</candidates>

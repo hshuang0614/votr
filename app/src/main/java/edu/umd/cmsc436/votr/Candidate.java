@@ -5,6 +5,9 @@ package edu.umd.cmsc436.votr;
  */
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
+
+import java.io.InputStream;
 
 
 public class Candidate {
@@ -13,8 +16,7 @@ public class Candidate {
     private int Age;
 
     //fields to set candidates picture
-    private Bitmap image;
-    private String imageURL;
+    private Drawable Pic;
 
     //final static fields for use with intent extras
     final static String N = "name";
@@ -22,10 +24,11 @@ public class Candidate {
     final static String A = "age";
 
 
-    public Candidate(String n, String p, int a){
+    public Candidate(String n, String p, int a, Drawable pic){
         this.Name = n;
         this.Party = p;
         this.Age = a;
+        this.Pic = pic;
     }
 
     public String getName(){
@@ -38,6 +41,10 @@ public class Candidate {
 
     public String getParty(){
         return this.Party;
+    }
+
+    public Drawable getImage(){
+        return this.Pic;
     }
 
     public Candidate(Intent i){
