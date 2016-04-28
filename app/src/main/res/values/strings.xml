@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">votr</string>
+    <string name="title_activity_polling_location">Polling Location</string>
 </resources>
