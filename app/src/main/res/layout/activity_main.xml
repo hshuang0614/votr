@@ -26,6 +26,6 @@
         android:layout_height="wrap_content"
         android:text="Early Vote Sites"
         android:id="@+id/early_vote_sites"
-        android:layout_below="@+id/candidates"
+        android:layout_below="@+id/polling_location"
         android:layout_centerHorizontal="true" />
 </RelativeLayout>
