@@ -1,4 +1,4 @@
-package edu.umd.cmsc436.votr.civicinfo;
+package edu.umd.cmsc436.votr.CivicInfo;
 
 import com.google.api.services.civicinfo.model.VoterInfoResponse;
 

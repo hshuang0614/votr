@@ -1,4 +1,4 @@
-package edu.umd.cmsc436.votr.civicinfo;
+package edu.umd.cmsc436.votr.CivicInfo;
 
 import android.content.Context;
 import android.location.Address;
