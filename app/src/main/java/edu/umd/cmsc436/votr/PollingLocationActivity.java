@@ -11,7 +11,6 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 public class PollingLocationActivity extends FragmentActivity implements OnMapReadyCallback {
-
     private GoogleMap mMap;
 
     @Override
@@ -25,7 +24,6 @@ public class PollingLocationActivity extends FragmentActivity implements OnMapRe
 
         mapFragment.getMapAsync(this);
     }
-
 
     /**
      * Manipulates the map once available.
