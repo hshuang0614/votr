@@ -3,6 +3,7 @@
     <string name="title_activity_polling_location">Polling Location</string>
     <string name="open_fec_api_key">qUQlqMRieFbHMXQkRcxvRT5vjubdzIpbuVlYglIY</string>
     <string name="city_placeholder_text">City</string>
+    <string name="polling_location_not_found_message">We could not find any polling locations for the address you entered. Please check to make sure you entered it correctly, or try again closer to Election Day. If the election date has already passed, polling location information will not be available. Otherwise, polling location information will be available 2-4 weeks prior to the election. For the most complete and up to date information, visit your state's website.</string>
 
     <string-array name="stateCodes">
         <item>AL</item>

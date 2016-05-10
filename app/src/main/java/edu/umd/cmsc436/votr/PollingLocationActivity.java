@@ -1,6 +1,8 @@
 package edu.umd.cmsc436.votr;
 
+import android.app.AlertDialog;
 import android.app.Fragment;
+import android.content.DialogInterface;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.widget.FrameLayout;
@@ -27,7 +29,9 @@ public class PollingLocationActivity extends FragmentActivity implements OnMapRe
     private SupportMapFragment mMapFragment;
     private LatLng mLatLng;
 
-    private String mStreetAddress, mCity, mState, mTitle, mPollingHours;
+    private String mStreetAddress, mCity, mState, mTitle;
+
+    public static final int NO_LOCATION_FOUND = 4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,13 +102,11 @@ public class PollingLocationActivity extends FragmentActivity implements OnMapRe
             List<PollingLocation> locations = response.getPollingLocations();
 
             if (locations == null || locations.isEmpty()) {
-                String message = "No polling locations found";
-                Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
+                setResult(NO_LOCATION_FOUND);
                 finish();
             }
         } else if (response == null) {
-            String message = "No polling locations found";
-            Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
+            setResult(NO_LOCATION_FOUND);
             finish();
         }
     }

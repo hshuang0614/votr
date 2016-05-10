@@ -1,5 +1,7 @@
 package edu.umd.cmsc436.votr;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,6 +15,8 @@ import android.widget.Toast;
 public class EnterAddressActivity extends AppCompatActivity {
     private String[] stateCodes;
     private String[] stateNames;
+
+    private static final int SHOW_POLL_LOC_REQUEST = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +56,7 @@ public class EnterAddressActivity extends AppCompatActivity {
                         intent.putExtra("state", stateCodeStr);
                         intent.putExtra("streetAddress", streetAddressStr);
 
-                        startActivity(intent);
+                        startActivityForResult(intent, SHOW_POLL_LOC_REQUEST);
                     }
                 } else {
                     String message = "Please enter a street address and city";
@@ -64,5 +68,25 @@ public class EnterAddressActivity extends AppCompatActivity {
 
     private static boolean notEmpty(TextView textView) {
         return textView.getText().toString().trim().length() > 0;
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == SHOW_POLL_LOC_REQUEST &&
+                resultCode == PollingLocationActivity.NO_LOCATION_FOUND) {
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("No polling locations found")
+                    .setMessage(getString(R.string.polling_location_not_found_message))
+                    .setCancelable(false)
+                    .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            dialog.cancel();
+                        }
+                    });
+            final AlertDialog alert = builder.create();
+
+            alert.show();
+        }
     }
 }
