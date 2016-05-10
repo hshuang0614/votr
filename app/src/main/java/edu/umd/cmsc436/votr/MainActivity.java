@@ -7,6 +7,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.api.services.civicinfo.model.Election;
+
+import org.json.JSONObject;
+
+import edu.umd.cmsc436.votr.OpenFEC.ElectionDateLoaderTask;
+
 public class MainActivity extends AppCompatActivity {
     private LocationManager mLocationManager;
 
@@ -22,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         // Initialize buttons
         Button candidatesButton = (Button) findViewById(R.id.candidates);
         Button pollingLocationButton = (Button) findViewById(R.id.polling_location);
-        Button earlyVoteSites = (Button) findViewById(R.id.early_vote_sites);
+        Button votingDates = (Button) findViewById(R.id.voting_dates);
 
         // Setup listeners
         candidatesButton.setOnClickListener(new View.OnClickListener() {
@@ -36,14 +42,16 @@ public class MainActivity extends AppCompatActivity {
         pollingLocationButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, PollingLocationActivity.class);
+                Intent i = new Intent(MainActivity.this, EnterAddressActivity.class);
                 startActivity(i);
             }
         });
 
-        earlyVoteSites.setOnClickListener(new View.OnClickListener() {
+        votingDates.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, SelectStateActivity.class);
+                startActivity(i);
             }
         });
     }
