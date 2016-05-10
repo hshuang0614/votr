@@ -101,7 +101,7 @@ public class VotingDatesActivity extends AppCompatActivity {
                 finish();
             }
         } catch (Exception e) {
-            String message = "An error ocurred while trying to get election dates";
+            String message = "An error occurred while trying to get election dates";
             Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
             finish();
         }
