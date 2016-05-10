@@ -1,9 +1,18 @@
 package edu.umd.cmsc436.votr;
 
-import android.graphics.drawable.Drawable;
+import android.content.Intent;
+import android.content.res.AssetManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -16,6 +25,8 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 public class CandidatesActivity extends AppCompatActivity {
@@ -31,7 +42,22 @@ public class CandidatesActivity extends AppCompatActivity {
         ListView listView = (ListView) findViewById(R.id.listView);
         CandidatesListAdapter adapter = new CandidatesListAdapter(this, candidates);
 
+
+        listView.setOnItemClickListener(new OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Intent i = new Intent(CandidatesActivity.this, CandidateDetailActivity.class);
+                Candidate candidate = candidates.get(position);
+                candidate.packIntent(i);
+                startActivity(i);
+            }
+        });
+
         listView.setAdapter(adapter);
+
+
     }
 
     private void candidateDataFromXml() {
@@ -39,9 +65,11 @@ public class CandidatesActivity extends AppCompatActivity {
         String name = "";
         String party = "";
         String age = "";
+        String bio = "";
+        String status = "";
         String pic_loc = "";
-
-        Drawable pic = null;
+        InputStream str ;
+        Bitmap pic = null;
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 
         try {
@@ -65,15 +93,20 @@ public class CandidatesActivity extends AppCompatActivity {
                                 party = attribute.getTextContent();
                             } else if (attribute.getNodeName().equals("age")) {
                                 age = attribute.getTextContent();
+                            } else if (attribute.getNodeName().equals("status")) {
+                                status = attribute.getTextContent();
+                            } else if (attribute.getNodeName().equals("bio")) {
+                                bio = attribute.getTextContent();
                             } else if (attribute.getNodeName().equals("picture_string")) {
                                 pic_loc = attribute.getTextContent();
-                                pic = Drawable.createFromStream(getAssets().open("images/" + pic_loc + ".jpg"), null);
+                                //str = getAssets().open("images/" + pic_loc + ".jpg");
+                                //pic = BitmapFactory.decodeStream(str);
                             }
                         }
                     }
 
                     // Add candidate to list
-                    Candidate can = new Candidate(name, party, Integer.parseInt(age), pic);
+                    Candidate can = new Candidate(name, party, Integer.parseInt(age), status, bio, pic_loc);
                     candidates.add(can);
                 }
             }

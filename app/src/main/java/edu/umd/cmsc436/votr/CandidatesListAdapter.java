@@ -4,6 +4,8 @@ package edu.umd.cmsc436.votr;
  * Created by webforce on 4/21/2016.
  */
 import android.content.Context;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +14,8 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 
 
@@ -46,17 +50,26 @@ public class CandidatesListAdapter extends BaseAdapter {
         RelativeLayout candidateLayout = (RelativeLayout) LayoutInflater.from(mContext).inflate(R.layout.candidate, parent, false);
 
         final TextView theName = (TextView) candidateLayout.findViewById(R.id.name);
-        theName.setText("Name:" + candidate.getName());
+        theName.setText("Name: " + candidate.getName());
 
         final TextView theParty = (TextView) candidateLayout.findViewById(R.id.party);
-        theParty.setText("Party:" + candidate.getParty());
+        theParty.setText("Party: " + candidate.getParty());
 
         final TextView theAge = (TextView) candidateLayout.findViewById(R.id.age);
-        theAge.setText("Age:" + candidate.getAge());
+        theAge.setText("Age: " + candidate.getAge());
+
+       final TextView theStatus = (TextView) candidateLayout.findViewById(R.id.status);
+       theStatus.setText("Status: " + candidate.getStatus());
 
         final ImageView picture = (ImageView) candidateLayout.findViewById(R.id.picture);
         //set picture to bitmap
-        picture.setImageDrawable(candidate.getImage());
+        InputStream str = null;
+        try {
+            str = mContext.getAssets().open("images/" + candidate.getPic_Loc() + ".jpg");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        picture.setImageBitmap(BitmapFactory.decodeStream(str));
 
 
         return candidateLayout;

@@ -5,6 +5,8 @@
     	<name>Hillary Clinton</name>
     	<party>Democrat</party>
     	<age>68</age>
+		<status>Running</status>
+		<bio>Hillary Diane Rodham Clinton (born October 26, 1947) is an American politician. She is a candidate for the Democratic nomination for President of the United States in the 2016 election. She was the 67th United States Secretary of State from 2009 to 2013. From 2001 to 2009, Clinton served as a United States Senator from New York. She is the wife of the 42nd President of the United States Bill Clinton, and was First Lady of the United States during his tenure from 1993 to 2001.</bio>
 		<picture_string>hillary</picture_string>
     </candidate>
 
@@ -12,6 +14,8 @@
     	<name>Bernie Sanders</name>
     	<party>Democrat</party>
     	<age>74</age>
+		<status>Running</status>
+		<bio>Bernard "Bernie"awd Sanders (born September 8, 1941) is an American politician and the junior United States senator from Vermont. He is a candidate for the Democratic nomination for President of the United States in the 2016 election. A member of the Democratic Party since 2015, Sanders had been the longest-serving independent in U.S. congressional history, though his caucusing with the Democrats entitled him to committee assignments and at times gave Democrats a majority. Sanders became the ranking minority member on the Senate Budget Committee in January 2015; he had previously served for two years as chair of the Senate Veterans' Affairs Committee. A self-proclaimed democratic socialist, Sanders is pro-labor and favors greater economic equality.</bio>
 		<picture_string>bernie</picture_string>
     </candidate>
 
@@ -19,6 +23,8 @@
     	<name>Donald Trump</name>
     	<party>Republican</party>
     	<age>69</age>
+		<status>Running</status>
+		<bio>Donald John Trump (born June 14, 1946) is an American businessman, politician, television personality, author, and candidate for the Republican nomination for President of the United States in the 2016 election. Trump is the Chairman and President of The Trump Organization, as well as the founder of the gaming and hotel enterprise, Trump Entertainment Resorts, now owned by Carl Icahn. Trump is a son of New York City real estate developer Fred Trump and worked for his fathers firm, Elizabeth Trump and Son, while attending college. After graduating in 1968 he joined the company, and in 1971 was given control, later renaming the company The Trump Organization. Trump has since built casinos, golf courses, hotels, and other properties, many of which bear his name.</bio>
 		<picture_string>donald</picture_string>
     </candidate>
 
@@ -26,6 +32,8 @@
     	<name>Ted Cruz</name>
     	<party>Republican</party>
     	<age>45</age>
+		<status>Dropped out</status>
+		<bio>Rafael Edward "Ted" Cruz (born December 22, 1970) is an American politician and the junior United States Senator from Texas. He is a candidate for the Republican nomination for President of the United States in the 2016 election. Cruz graduated from Princeton University in 1992, and from Harvard Law School in 1995. Between 1999 and 2003, he was the Director of the Office of Policy Planning at the Federal Trade Commission, an Associate Deputy Attorney General at the United States Department of Justice, and domestic policy advisor to George W. Bush on the 2000 George W. Bush presidential campaign. He served as Solicitor General of Texas, from 2003 to 2008, appointed by Texas Attorney General, Greg Abbott. He was the first Hispanic, and the longest-serving, Solicitor General in Texas history. From 2004 to 2009, Cruz was also an adjunct professor at the University of Texas School of Law in Austin, where he taught U.S. Supreme Court litigation.Rafael Edward "Ted" Cruz (born December 22, 1970) is an American politician and the junior United States Senator from Texas. He is a candidate for the Republican nomination for President of the United States in the 2016 election. Cruz graduated from Princeton University in 1992, and from Harvard Law School in 1995. Between 1999 and 2003, he was the Director of the Office of Policy Planning at the Federal Trade Commission, an Associate Deputy Attorney General at the United States Department of Justice, and domestic policy advisor to George W. Bush on the 2000 George W. Bush presidential campaign. He served as Solicitor General of Texas, from 2003 to 2008, appointed by Texas Attorney General, Greg Abbott. He was the first Hispanic, and the longest-serving, Solicitor General in Texas history. From 2004 to 2009, Cruz was also an adjunct professor at the University of Texas School of Law in Austin, where he taught U.S. Supreme Court litigation.</bio>
 		<picture_string>ted</picture_string>
     </candidate>
 
@@ -33,6 +41,8 @@
     	<name>John Kasich</name>
     	<party>Republican</party>
     	<age>63</age>
+		<status>Dropped out</status>
+		<bio>John Richard Kasich (born May 13, 1952) is an American politician and the current governor of Ohio, first elected in 2010 and re-elected in 2014. On July 21, 2015, he announced his candidacy for the 2016 Republican nomination for President of the United States.Kasich served nine terms as a member of the United States House of Representatives, representing Ohio's 12th congressional district from 1983 to 2001. His tenure in the House included 18 years on the House Armed Services Committee and six years as chairman of the House Budget Committee. He was a key figure in the passage of both welfare reform and the Balanced Budget Act of 1997.  He was a commentator on Fox News Channel, hosting Heartland with John Kasich from 2001 to 2007. He also worked as an investment banker, serving as managing director of the Lehman Brothers office in Columbus, Ohio.</bio>
 		<picture_string>john</picture_string>
     </candidate>
 
