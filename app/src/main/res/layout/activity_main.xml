@@ -24,8 +24,8 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Early Vote Sites"
-        android:id="@+id/early_vote_sites"
+        android:text="Election Dates"
+        android:id="@+id/voting_dates"
         android:layout_below="@+id/polling_location"
         android:layout_centerHorizontal="true" />
 </RelativeLayout>

@@ -16,6 +16,8 @@ import com.google.api.services.civicinfo.model.PollingLocation;
 import com.google.api.services.civicinfo.model.SimpleAddressType;
 import com.google.api.services.civicinfo.model.VoterInfoResponse;
 
+import java.util.List;
+
 import edu.umd.cmsc436.votr.CivicInfo.GetPollingLocationsListener;
 import edu.umd.cmsc436.votr.CivicInfo.GetPollingLocationsQuery;
 import edu.umd.cmsc436.votr.CivicInfo.GetPollingLocationsTask;
@@ -92,19 +94,15 @@ public class PollingLocationActivity extends FragmentActivity implements OnMapRe
             }
         }
 
-        if (response != null &&
-                (response.getPollingLocations() == null ||
-                        response.getPollingLocations().isEmpty())) {
-            if (response.getDropOffLocations() != null) {
-                // Todo: Show a list view with drop off locations.
-            } // Else goes here.
+        if (response != null) {
+            List<PollingLocation> locations = response.getPollingLocations();
 
-            String message = "No polling locations found";
-            Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
-            finish();
+            if (locations == null || locations.isEmpty()) {
+                String message = "No polling locations found";
+                Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
+                finish();
+            }
         } else if (response == null) {
-            // Return error code and let the prev activity launch the election_dates activity
-            // passing it an error message.
             String message = "No polling locations found";
             Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
             finish();

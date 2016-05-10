@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         // Initialize buttons
         Button candidatesButton = (Button) findViewById(R.id.candidates);
         Button pollingLocationButton = (Button) findViewById(R.id.polling_location);
-        Button earlyVoteSites = (Button) findViewById(R.id.early_vote_sites);
+        Button votingDates = (Button) findViewById(R.id.voting_dates);
 
         // Setup listeners
         candidatesButton.setOnClickListener(new View.OnClickListener() {
@@ -47,9 +47,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        earlyVoteSites.setOnClickListener(new View.OnClickListener() {
+        votingDates.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, SelectStateActivity.class);
+                startActivity(i);
             }
         });
     }
