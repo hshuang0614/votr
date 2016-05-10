@@ -7,6 +7,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.api.services.civicinfo.model.Election;
+
+import org.json.JSONObject;
+
+import edu.umd.cmsc436.votr.OpenFEC.ElectionDateLoaderTask;
+
 public class MainActivity extends AppCompatActivity {
     private LocationManager mLocationManager;
 
@@ -36,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         pollingLocationButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, PollingLocationActivity.class);
+                Intent i = new Intent(MainActivity.this, EnterAddressActivity.class);
                 startActivity(i);
             }
         });
