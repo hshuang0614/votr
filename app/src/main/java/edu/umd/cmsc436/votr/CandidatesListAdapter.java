@@ -50,16 +50,16 @@ public class CandidatesListAdapter extends BaseAdapter {
         RelativeLayout candidateLayout = (RelativeLayout) LayoutInflater.from(mContext).inflate(R.layout.candidate, parent, false);
 
         final TextView theName = (TextView) candidateLayout.findViewById(R.id.name);
-        theName.setText("Name: " + candidate.getName());
+        theName.setText(candidate.getName());
 
         final TextView theParty = (TextView) candidateLayout.findViewById(R.id.party);
-        theParty.setText("Party: " + candidate.getParty());
+        theParty.setText(candidate.getParty());
 
         final TextView theAge = (TextView) candidateLayout.findViewById(R.id.age);
-        theAge.setText("Age: " + candidate.getAge());
+        theAge.setText(candidate.getAge() + " years old");
 
        final TextView theStatus = (TextView) candidateLayout.findViewById(R.id.status);
-       theStatus.setText("Status: " + candidate.getStatus());
+       theStatus.setText(candidate.getStatus());
 
         final ImageView picture = (ImageView) candidateLayout.findViewById(R.id.picture);
         //set picture to bitmap

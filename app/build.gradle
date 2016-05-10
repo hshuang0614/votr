@@ -10,6 +10,7 @@ android {
         targetSdkVersion 21
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -38,4 +39,6 @@ dependencies {
     compile files('libs/jdo2-api-2.3-eb.jar')
     compile files('libs/google-http-client-jdo-1.21.0.jar')
     compile files('libs/google-api-services-civicinfo-v2-rev13-1.21.0.jar')
+    compile files('libs/lingpipe-4.1.0.jar')
+    compile files('libs/twitter4j-core-4.0.4.jar')
 }

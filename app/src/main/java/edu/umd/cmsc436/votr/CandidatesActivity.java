@@ -42,7 +42,6 @@ public class CandidatesActivity extends AppCompatActivity {
         ListView listView = (ListView) findViewById(R.id.listView);
         CandidatesListAdapter adapter = new CandidatesListAdapter(this, candidates);
 
-
         listView.setOnItemClickListener(new OnItemClickListener() {
 
             @Override
@@ -99,8 +98,6 @@ public class CandidatesActivity extends AppCompatActivity {
                                 bio = attribute.getTextContent();
                             } else if (attribute.getNodeName().equals("picture_string")) {
                                 pic_loc = attribute.getTextContent();
-                                //str = getAssets().open("images/" + pic_loc + ".jpg");
-                                //pic = BitmapFactory.decodeStream(str);
                             }
                         }
                     }
