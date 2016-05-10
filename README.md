@@ -21,5 +21,5 @@ Sentiment Analysis Library (Lingpipe).
 Presentation: https://docs.google.com/presentation/d/1l1XfCg4ZVAcW7D9VPafhfJWXd6KkAGGfW1GyUlXY_tk/edit#slide=id.g11222ff36a_0_31
 
 
-Authors: Eric Tung, George Cleary, Han Huang, Fahed HijaziDan.
+Authors: Eric Tung, George Cleary, Han Huang, Fahed Hijazi.
 
