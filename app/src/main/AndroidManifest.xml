@@ -23,7 +23,11 @@
         </activity>
 
         <activity
-            android:name=".PollingLocationActivity"
+            android:name=".EnterAddressActivity"
+            android:label="Enter Your Registered Address" />
+
+        <activity
+             android:name=".PollingLocationActivity"
             android:label="@string/title_activity_polling_location"></activity>
 
         <activity
