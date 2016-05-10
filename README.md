@@ -1,4 +1,4 @@
-Votr - Your voting assistant [CMSC436] 
+**Votr - Your voting assistant [CMSC436]**
 
 Features include: 
 - Direction to closest polling location
